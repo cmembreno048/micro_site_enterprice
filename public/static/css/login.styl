@@ -3,10 +3,24 @@ $maincolor = #DEC3F6
 $maincolor_black = #B698D1
 
 
+body
+    font-family 'Roboto', sans-serif
+    padding 0
+    margin 0
+    box-sizing: border-box
+
+.centerf
+    display: flex
+    justify-content: center
+    align-items: center
+
 .card 
     height: 100vh
     width: 100%
     background: linear-gradient(90deg, rgba(46,204,113,0.5) 0%, rgba(21,101,192,0.5) 100%);
+
+.card .text-monospace
+    color: #414141
 
 .box 
     width: 500px
@@ -16,6 +30,9 @@ $maincolor_black = #B698D1
     transition: 0.25s
     flex-direction: column
 
+.box .form-check
+    padding-left: 25%
+    color: #d0d0d0
 
 .box input[type="text"],
 .box input[type="password"] 

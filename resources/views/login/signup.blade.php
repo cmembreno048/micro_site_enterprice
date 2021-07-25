@@ -1,12 +1,12 @@
-@extends('master')
+@extends('login.master')
 @section('title')
     Registrarse
 @endsection
 
 @section('body')
     <div class="card centerf">
-        <form action="/" method="post" class="rounded box">
-            
+        <form action="/signup" method="post" class="rounded box">
+            @csrf
             <h1>Registro</h1>
 
             <p class="text-muted">Complete el siguiente formulario</p> 
