@@ -61,7 +61,7 @@ function showModalDeleteJs(id, goToFunction){
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content ">
                 <div class="modal-body centerf">
-                    <img  src="${urlname}/advertencia.png" style="width:100px" class="p-2 img-fluid centerf" >
+                    <img  src="${urlname}/storage/src/advertencia.png" style="width:100px" class="p-2 img-fluid centerf" >
                 </div>
                 <div class="modal-footer centerf">
                     <a type="button" class="btn btn-danger" data-dismiss="modal">No, cerrar</a>
