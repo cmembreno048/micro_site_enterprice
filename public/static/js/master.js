@@ -1,5 +1,11 @@
 'use strict'
+
+
+var urlname = window.location.protocol + '//' + window.location.host;
+
 window.addEventListener('DOMContentLoaded', (event) => {
+
+    
 
     setTimeout(() => {
         $(".alert").fadeOut("slow")
@@ -15,9 +21,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
         if(toggle && nav && bodypd && headerpd){
             toggle.addEventListener('click', ()=>{
                 
-                nav.classList.toggle('show')
+                nav.classList.toggle('show-side')
                 
                 toggle.classList.toggle('fa-bars')
+
+                toggle.classList.toggle('fa-times')
                 
                 bodypd.classList.toggle('body-pd')
 
@@ -30,7 +38,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     
     showNavbar('header-toggle','nav-bar','body-pd','header')
 
-
     $('.counter').each(function () {
         $(this).prop('Counter',0).animate({
             Counter: $(this).text()
@@ -42,7 +49,30 @@ window.addEventListener('DOMContentLoaded', (event) => {
             }
         });
     });
-    
-   
-        
+      
 });
+
+
+function showModalDeleteJs(id, goToFunction){
+
+    document.getElementById('modal_delete').innerHTML = 
+    `
+    <div class="modal fade" id="modal_show_delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content ">
+                <div class="modal-body centerf">
+                    <img  src="${urlname}/advertencia.png" style="width:100px" class="p-2 img-fluid centerf" >
+                </div>
+                <div class="modal-footer centerf">
+                    <a type="button" class="btn btn-danger" data-dismiss="modal">No, cerrar</a>
+                    <a type="button" href="${urlname}${goToFunction}${id}"  class="btn btn-success">Si, Eliminar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    `
+
+    $('#modal_show_delete').modal('show')
+
+}
+

@@ -12,6 +12,7 @@ class EmployeesController extends Controller
     }
 
     public function show(){
+
         return view('employees.show');
     }
 }

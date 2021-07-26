@@ -18,8 +18,8 @@ class CreateEmployeesTable extends Migration
             $table->string('name');
             $table->string('last_name');
             $table->integer('enterprice_id');
-            $table->string('email');
-            $table->integer('phone');
+            $table->string('email')->nullable();
+            $table->integer('phone')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

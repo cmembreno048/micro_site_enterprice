@@ -20,6 +20,10 @@ Route::get( '/logout' , [LoginController::class, 'logout'] )->name('logout');
 
 Route::prefix('/enterprice')->group(function () {
     Route::get( '' , [EnterpriceController::class, 'show'] )->name('enterprice');
+    Route::post( '' , [EnterpriceController::class, 'store'] )->name('enterprice');
+    Route::get( '/edit/{id}' , [EnterpriceController::class, 'edit'] )->name('enterprice');
+    Route::post( '/edit/{id}' , [EnterpriceController::class, 'update'] )->name('enterprice');
+    Route::get( '/delete/{id}' , [EnterpriceController::class, 'delete'] )->name('enterprice');
 });
 
 Route::prefix('/employees')->group(function () {

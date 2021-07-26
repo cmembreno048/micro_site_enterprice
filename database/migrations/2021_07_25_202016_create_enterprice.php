@@ -16,9 +16,9 @@ class CreateEnterprice extends Migration
         Schema::create('enterprice', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
+            $table->string('email')->nullable();
             $table->string('image')->nullable();
-            $table->string('web_site');
+            $table->string('web_site')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

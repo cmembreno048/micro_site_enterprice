@@ -21,7 +21,7 @@
     <header class="header body-pd" id="header">
         <div class="header_toggle"> <i class="fas fa-times"  id="header-toggle"></i> </div>
     </header>
-    <div class="l-navbar show" id="nav-bar">
+    <div class="l-navbar show-side " id="nav-bar">
         <nav class="nav">
             <div> <a href="#" class="nav_logo"> 
                 <i class="fas fa-user icon"></i>
@@ -58,9 +58,11 @@
 
     <div class="height-100 ">
       @yield('body')
-    </div>
-  
+     
 
+    </div>
+    
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <script src="{{url('/static/js/master.js?v='.time())}}"></script>

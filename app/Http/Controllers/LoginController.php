@@ -19,8 +19,6 @@ class LoginController extends Controller
 
     public function postSignin(Request $request){
         
-       
-
         $rules = [
             'email' => 'required|email',
             'password' => 'required|min:8',
@@ -32,10 +30,11 @@ class LoginController extends Controller
             'password.min' => 'El formato es invalido',
             'email.email' => 'El formato es invalido',
         ];
+        
         $validator = Validator::make($request->all(), $rules, $messages);
         
         if($validator->fails()) :
-            return back()->withInput($request->input());
+            return back()->with('message', 'Verifique los campos')->with('typealert', 'danger')->withInput($request->input());
         else:
 
             $credentials =  $request->only('email', 'password');
