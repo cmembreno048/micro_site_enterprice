@@ -25,3 +25,5 @@ Develop by
 ● Iniciar sesión con: <br> 
 <strong>Usuario: admin@admin.com</strong> <br>
 <strong>Contraseña: contraseña</strong>
+
+<h5>Ejecutar el servidor con <strong>php artisan serve</strong><h5>
