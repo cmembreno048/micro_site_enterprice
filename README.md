@@ -15,3 +15,13 @@ Develop by
 <h1>Cristian Membreño</h1>
 <h5>cmembreno048@gmail.com</h5>
 <h5>Contact: <span style="font-weight:600" > 87698166</span></h5>
+
+
+<h1>Como usar</h1>
+● Clonar el repositiorio <br>
+● Crear base de datos con el nombre <h4><strong>db_micro_site_enterprice</strong></h4> <br>
+● Ejecutar migraciones con el comando <strong> php artisan migrate --seed </strong> <br>
+
+● Iniciar sesión con: <br> 
+<strong>Usuario: admin@admin.com</strong> <br>
+<strong>Contraseña: contraseña</strong>

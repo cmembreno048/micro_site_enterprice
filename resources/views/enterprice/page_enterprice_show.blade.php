@@ -63,9 +63,10 @@
                         @endif
 
                         <div class="custom-file my-3">
-                            <input accept="image/*" type="file" name="image" class="custom-file-input" id="customFile">
+                            <input accept="image/*" type="file" name="image" class="custom-file-input" onchange="changeImage()">
                             <label class="custom-file-label"  for="customFile">Subir logotipo</label>
                           </div>
+                          <small id="photoloaded" ></small>
                         @if ($errors->has('image'))
                             <div class="alert alert-danger mtop16">    
                                 <p>{{ $errors->first('image') }}</p>         
@@ -73,7 +74,7 @@
                         @endif
 
 
-                        <button class="w-100 btn btn-primary px-2 my-3" type="submit"><i class="fas fa-plus"></i> Agregar empresa</button>
+                        <button class="w-100 btn btn-primary px-2 my-3" type="submit"> Agregar empresa</button>
                     </form>
                 </div>
 

@@ -42,7 +42,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         $(this).prop('Counter',0).animate({
             Counter: $(this).text()
             }, {
-                duration: 4000,
+                duration: 1000,
                 easing: 'swing',
                 step: function (now) {
                     $(this).text(Math.ceil(now));
@@ -76,3 +76,7 @@ function showModalDeleteJs(id, goToFunction){
 
 }
 
+function changeImage(){
+    document.getElementById('photoloaded').innerHTML = ""
+    document.getElementById('photoloaded').innerHTML = "<p style='color:green'><i class='far fa-check-circle'></i> Imagen lista para subir al servidor</p>"
+}

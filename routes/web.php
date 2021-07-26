@@ -12,7 +12,7 @@ Route::get( '/signin' , [LoginController::class, 'getSignin'] )->name('signin');
 Route::post( '/signin' , [LoginController::class, 'postSignin'] )->name('signin');
 
 Route::get( '/signup' , [LoginController::class, 'getSignup'] )->name('signup');
-Route::get( '/signup' , [LoginController::class, 'getSignup'] )->name('signup');
+Route::post( '/signup' , [LoginController::class, 'postSignup'] )->name('signup');
 
 
 Route::get( '/logout' , [LoginController::class, 'logout'] )->name('logout');
@@ -28,4 +28,8 @@ Route::prefix('/enterprice')->group(function () {
 
 Route::prefix('/employees')->group(function () {
     Route::get( '' , [EmployeesController::class, 'show'] )->name('employees');
+    Route::post( '' , [EmployeesController::class, 'store'] )->name('employees');
+    Route::get( '/edit/{id}' , [EmployeesController::class, 'edit'] )->name('employees');
+    Route::post( '/edit/{id}' , [EmployeesController::class, 'update'] )->name('employees');
+    Route::get( '/delete/{id}' , [EmployeesController::class, 'delete'] )->name('employees');
 });

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EmployeesModel;
+use App\Models\EnterpriceModel;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -13,6 +16,11 @@ class MainController extends Controller
     }
 
     public function getMain(){
-        return view('home');
+
+        $countEnterprice = EnterpriceModel::count();
+        $countEmployees = EmployeesModel::count();
+        $countUsers = User::count();
+
+        return view('home', compact('countEnterprice', 'countEmployees', 'countUsers'));
     }
 }

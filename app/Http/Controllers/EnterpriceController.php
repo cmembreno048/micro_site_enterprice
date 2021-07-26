@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EmployeesModel;
 use App\Models\EnterpriceModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -71,7 +72,7 @@ class EnterpriceController extends Controller
 
         $messages = [
             'name.required' => 'Campo necesario',
-            'image.dimensions' => 'EL tamaño minimo por imagen es de 100x100 px',
+            'image.dimensions' => 'El tamaño minimo por imagen es de 100x100 px',
         ];
         $validator = Validator::make($request->all(), $rules, $messages);
         
@@ -80,8 +81,6 @@ class EnterpriceController extends Controller
         else:
 
             $enterprice = EnterpriceModel::findorFail($id);
-
-            
 
             $enterprice->fill($request->all());
 
@@ -105,6 +104,8 @@ class EnterpriceController extends Controller
     public function delete($id){
 
         EnterpriceModel::findorFail($id)->delete();
+
+        EmployeesModel::where('enterprice_id', $id)->delete();
 
         return redirect('/enterprice')->with('message', 'Empresa Eliminada correctamente')->with('typealert', 'success');
 

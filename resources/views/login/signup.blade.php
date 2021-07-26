@@ -11,17 +11,42 @@
 
             <p class="text-muted">Complete el siguiente formulario</p> 
 
-            <input type="text" name="" placeholder="Nombre"> 
+            <input type="text" name="name" placeholder="Nombre"> 
+            @if ($errors->has('name'))
+                <div class="alert alert-danger mtop16">    
+                    <p>{{ $errors->first('name') }}</p>         
+                </div>
+            @endif
 
-            <input type="text" name="" placeholder="Apellido"> 
+            <input type="text" name="last_name" placeholder="Apellido"> 
+            @if ($errors->has('last_name'))
+                <div class="alert alert-danger mtop16">    
+                    <p>{{ $errors->first('last_name') }}</p>         
+                </div>
+            @endif
 
-            <input type="text" name="" placeholder="Correo"> 
+            <input type="text" name="email" placeholder="Correo"> 
+            @if ($errors->has('email'))
+                <div class="alert alert-danger mtop16">    
+                    <p>{{ $errors->first('email') }}</p>         
+                </div>
+            @endif
 
-            <input type="password" name="" placeholder="Contraseña"> 
+            <input type="password" name="password" placeholder="Contraseña"> 
+            @if ($errors->has('password'))
+                <div class="alert alert-danger mtop16">    
+                    <p>{{ $errors->first('password') }}</p>         
+                </div>
+            @endif
 
-            <input type="password" name="" placeholder="Repita la contraseña"> 
+            <input type="password" name="conf_password" placeholder="Repita la contraseña"> 
+            @if ($errors->has('conf_password'))
+                <div class="alert alert-danger mtop16">    
+                    <p>{{ $errors->first('conf_password') }}</p>         
+                </div>
+            @endif
 
-            <input type="submit" name="" value="Registrarme" >
+            <input type="submit" value="Registrarme" >
 
             <a class="forgot text-muted" href="/signin">¡Ya tengo cuenta! Iniciar sesión</a>
 

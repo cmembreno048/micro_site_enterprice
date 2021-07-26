@@ -11,5 +11,11 @@ class EmployeesModel extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $guarded = []; 
+
     protected $table = "employees";
+
+    public function getEnterprice(){
+        return $this->hasOne(EnterpriceModel::class, 'id', 'enterprice_id');
+    }
 }

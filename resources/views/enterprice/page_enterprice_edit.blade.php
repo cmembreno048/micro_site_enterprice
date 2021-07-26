@@ -66,9 +66,10 @@
                         @endif
 
                         <div class="custom-file my-3">
-                            <input accept="image/*" type="file" name="image" class="custom-file-input" id="customFile">
+                            <input accept="image/*" type="file" name="image" class="custom-file-input" onchange="changeImage()">
                             <label class="custom-file-label"  for="customFile">Actualizar logotipo</label>
                         </div>
+                        <small id="photoloaded" ></small>
 
                         <div class="preview_image centerimg">
                             @if ($enterprice->image != null)
@@ -84,7 +85,7 @@
                         @endif
 
 
-                        <button class="w-100 btn btn-primary px-2 my-3" type="submit"><i class="fas fa-plus"></i> Actualizar empresa</button>
+                        <button class="w-100 btn btn-primary px-2 my-3" type="submit">Actualizar empresa</button>
                     </form>
                 </div>
 
